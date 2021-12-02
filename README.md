@@ -9,6 +9,11 @@ The author use docker to run the container. **GPU is required** to train `tdnn_c
 ### Downloading Commonvoice Corpus
 We will need a commonvoice corpus for training ASR Engine. We are using Commonvoice Corpus 7.0 in Thai language which can be download [here](https://commonvoice.mozilla.org/th/datasets). Once downloaded, unzip it as we will use it later to mount dataset to the docker container.
 โหลดข้อมูล Data Sets ได้ที่ https://commonvoice.mozilla.org/th/datasets
+หรือที่
+
+!wget https://voice-prod-bundler-ee1969a6ce8178826482b88e843c335139bd3fb4.s3.amazonaws.com/cv-corpus-7.0-2021-07-21/cv-corpus-7.0-2021-07-21-th.tar.gz
+!tar -xvf cv-corpus-7.0-2021-07-21-th.tar.gz --no-same-owner
+
 
 ### Downloading SRILM
 Before building docker, SRILM file need to be downloaded. You can download it from [here](https://raw.githubusercontent.com/project2you/srilm-package/master/srilm-1.7.3.tar.gz). Once the file is downloaded, remove version name (e.g. from `srilm-1.7.3.tar.gz` to `srilm.tar.gz` and place it inside `docker` directory. Your `docker` directory should contains 2 files: `dockerfile`, and `srilm.tar.gz`.
@@ -47,7 +52,6 @@ $ docker run -it -v <path-to-repo>:/opt/kaldi/egs/commonvoice-th \
 ```
 Once you finish this step, you should be in a docker container's bash terminal now
 เมื่อคุณเสร็จสิ้นขั้นตอนนี้ คุณควรอยู่ใน bash terminal ของ docker container ทันที 
-
 
 ## Building Docker for inferencing via Vosk
 We also provide an example of how to inference a trained kaldi model using Vosk. Berore we begin, let's build Vosk docker image:
