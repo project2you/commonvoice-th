@@ -10,10 +10,11 @@ The author use docker to run the container. **GPU is required** to train `tdnn_c
 We will need a commonvoice corpus for training ASR Engine. We are using Commonvoice Corpus 7.0 in Thai language which can be download [here](https://commonvoice.mozilla.org/th/datasets). Once downloaded, unzip it as we will use it later to mount dataset to the docker container.
 โหลดข้อมูล Data Sets ได้ที่ https://commonvoice.mozilla.org/th/datasets
 หรือที่
-
+<br>
 !wget https://voice-prod-bundler-ee1969a6ce8178826482b88e843c335139bd3fb4.s3.amazonaws.com/cv-corpus-7.0-2021-07-21/cv-corpus-7.0-2021-07-21-th.tar.gz
+<br>
 !tar -xvf cv-corpus-7.0-2021-07-21-th.tar.gz --no-same-owner
-
+<br>
 
 ### Downloading SRILM
 Before building docker, SRILM file need to be downloaded. You can download it from [here](https://raw.githubusercontent.com/project2you/srilm-package/master/srilm-1.7.3.tar.gz). Once the file is downloaded, remove version name (e.g. from `srilm-1.7.3.tar.gz` to `srilm.tar.gz` and place it inside `docker` directory. Your `docker` directory should contains 2 files: `dockerfile`, and `srilm.tar.gz`.
